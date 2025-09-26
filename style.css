@@ -30,6 +30,29 @@ a {
   background-color: #cccccc;
   top: 60px;
 }
+@font-face {
+  font-family: "Chiro-Regular";
+  src: url("./fonts/Chiro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 초기 상태 */
+.item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  opacity: 0.4;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 보일 때 추가되는 클래스 */
+.item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* 첫번째 메인페이지 */
 .logo {
   position: relative;
   font-size: 150px;
@@ -40,13 +63,84 @@ a {
   font-family: "Chiro-Regular";
   display: flex;
   flex-direction: column;
+  gap: 6px;
+  /* overflow: hidden; 자식이 밖으로 나갔다 들어오는 효과 */
 }
-@font-face {
-  font-family: "Chiro-Regular";
-  src: url("./fonts/Chiro-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+.logo span {
+  display: inline-block;
+  position: relative;
+  transform: translateX(-100px);
+  opacity: 0;
+  animation: slideIn 0.8s ease-out forwards;
 }
+
+/* 두 번째 단어는 살짝 딜레이 */
+.logo span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+/* 밑줄 기본 */
+.logo span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #000;
+  animation: underline 0.8s ease-out forwards;
+  transition: width 0.4s ease;
+}
+/* My 밑줄 */
+.logo span:nth-child(1)::after {
+  animation-delay: 0.2s;
+  animation: underlineMy 0.8s ease-out forwards;
+}
+/* My 밑줄 딜레이 */
+.logo span:nth-child(1)::after {
+  animation-delay: 0.2s;
+}
+
+/* Portfolio 밑줄 딜레이 */
+.logo span:nth-child(2)::after {
+  animation-delay: 0.5s;
+}
+
+/* hover 시 다시 밑줄 */
+.logo span:hover::after {
+  width: 100%;
+}
+
+/* 애니메이션 키프레임 */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes underline {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+@keyframes underlineMy {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 30%; /* 원하는 길이 (예: 50%) */
+  }
+}
+
+/* leftmenu  */
 .leftmenu {
   position: relative;
   font-size: 50px;
@@ -60,8 +154,48 @@ a {
   display: flex;
   flex-direction: column;
 }
+
 .leftmenu li {
+  position: relative;
   display: flex;
+  transform: translateX(-100px);
+  opacity: 0;
+  animation: slideIn 0.8s ease-out forwards;
+}
+.leftmenu li:hover::before {
+  content: "✔";
+  position: absolute;
+  top: -40px; /* 글자 위쪽으로 */
+  left: 40%;
+  transform: translateX(-50%);
+  font-size: 50px;
+  color: rgb(88, 88, 88); /* 체크 색상 */
+}
+
+/* left 메뉴 순차 등장 */
+.leftmenu li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.leftmenu li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.leftmenu li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.leftmenu li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+/* logo 효과와 동일한 keyframes */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 .leftmenu li a {
   position: relative;
@@ -71,37 +205,32 @@ a {
   width: 150px;
   padding-left: 20px;
 }
-.leftmenu li a:hover {
-  color: #f5f5f5;
-}
-.submenu1 {
-  display: flex;
-}
 
 .fa-address-card {
   position: relative;
   display: flex;
-  align-items: center;
+  top: 25px;
 }
 .fa-toolbox {
   position: relative;
   display: flex;
-  align-items: center;
+  top: 25px;
 }
 .fa-book-open {
   position: relative;
   display: flex;
-  align-items: center;
+  top: 25px;
 }
 .fa-mobile-vibrate {
   position: relative;
   display: flex;
-  align-items: center;
+  top: 25px;
 }
 /* ====상단 내비==== */
 .header {
   position: relative;
   width: 100%;
+  top: 25px;
 }
 
 .gnb {
@@ -142,11 +271,6 @@ a {
   position: relative;
   width: 100%;
 }
-.item {
-  position: relative;
-  width: 100%;
-  display: flex;
-}
 
 .section1 {
   position: relative;
@@ -162,12 +286,19 @@ a {
   height: 500px;
   justify-content: center;
   align-items: center;
+  top: 30px;
 }
 
 .img1 {
   position: relative;
   display: flex;
 }
+.mypic img {
+  width: 200px; /* 원하는 가로 */
+  height: auto; /* 비율 유지 */
+  border-radius: 40px; /* 모서리 둥글게 */
+}
+
 .introduce {
   position: relative;
   display: flex;

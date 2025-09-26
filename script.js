@@ -139,3 +139,27 @@ leftMenuLinks.forEach((link) => {
     section.scrollIntoView({ behavior: "smooth" });
   });
 });
+// 스크롤 내리면 투명해졌다가 선명해지는 효과//
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".item");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          // 한 번만 애니메이션 실행 원한다면 unobserve
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15, // 20% 보이면 실행
+      rootMargin: "0px 0px -10% 0px", // 살짝 빨리 트리거 (선택 사항)
+    }
+  );
+
+  items.forEach((item) => {
+    observer.observe(item);
+  });
+});
