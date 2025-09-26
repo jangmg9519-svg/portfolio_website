@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포트폴리오 사이트</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/cdfe170332.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 상단 내비 -->
+      <nav class="nav">
+        <div class="logo">
+          <span>My</span>
+          <span>Portfolio</span>
+        </div>
+        <ul class="leftmenu">
+          <div class="submenu1">
+            <li>
+              <i class="fa-solid fa-address-card"></i>
+              <a href="aboutme">About Me</a>
+            </li>
+          </div>
+          <li>
+            <i class="fa-solid fa-toolbox"></i>
+            <a href="skills">Skills</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-book-open"></i>
+            <a href="Portfolio">Portfolio</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile-vibrate"></i>
+            <a href="Contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 헤더 -->
+      <header class="header">
+        <nav class="gnb">
+          <ul>
+            <li><a href="#menu0">About Me</a></li>
+            <li><a href="#menu1">Skills</a></li>
+            <li><a href="#menu2">Video Portfolio</a></li>
+            <li><a href="#menu3">illustrations</a></li>
+            <li><a href="#menu4">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- 콘텐츠 -->
+      <section class="sections">
+        <!-- About -->
+        <article id="menu0" class="item">
+          <div class="section1">
+            <div class="mypic"><img src="img1" alt="img1" /></div>
+            <div class="introduce">
+              <span class="intro1">자기소개영역입니다.</span>
+              <span class="intro2">자기소개영역입니다.</span>
+              <span class="intro3">자기소개영역입니다.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Skills -->
+        <article id="menu1" class="item">
+          <div class="section2">
+            <h1>Skills</h1>
+            <div class="tools">
+              <div class="lefttool">
+                <div class="photoshop">Photoshop</div>
+                <div class="illustrations">illustrations</div>
+                <div class="premierepro">Premiere pro</div>
+              </div>
+              <div class="righttool">
+                <div class="aftereffect">After effect</div>
+                <div class="blender">Blender</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video Portfolio -->
+        <article id="menu2" class="item">
+          <div class="section3">
+            <h1>Videos</h1>
+            <div class="swiper-section">
+              <!-- 스와이퍼 시작 -->
+              <div class="vs-swiper-container">
+                <button class="vs-nav vs-prev">&lt;</button>
+                <div class="vs-thumbnails-wrapper">
+                  <div class="vs-thumbnails" id="vsThumbnails">
+                    <div
+                      class="vs-thumb"
+                      data-video="https://www.w3schools.com/html/mov_bbb.mp4"
+                      data-desc="Video 1 설명"
+                    >
+                      <img
+                        src="https://picsum.photos/id/1015/400/240"
+                        alt="Video 1"
+                      />
+                      <p>Video 1</p>
+                    </div>
+                    <div
+                      class="vs-thumb"
+                      data-video="https://www.w3schools.com/html/movie.mp4"
+                      data-desc="Video 2 설명"
+                    >
+                      <img
+                        src="https://picsum.photos/id/1016/400/240"
+                        alt="Video 2"
+                      />
+                      <p>Video 2</p>
+                    </div>
+                    <div
+                      class="vs-thumb"
+                      data-video="https://www.w3schools.com/html/mov_bbb.mp4"
+                      data-desc="Video 3 설명"
+                    >
+                      <img
+                        src="https://picsum.photos/id/1018/400/240"
+                        alt="Video 3"
+                      />
+                      <p>Video 3</p>
+                    </div>
+                    <div
+                      class="vs-thumb"
+                      data-video="https://www.w3schools.com/html/movie.mp4"
+                      data-desc="Video 4 설명"
+                    >
+                      <img
+                        src="https://picsum.photos/id/1020/400/240"
+                        alt="Video 4"
+                      />
+                      <p>Video 4</p>
+                    </div>
+                    <div
+                      class="vs-thumb"
+                      data-video="https://www.w3schools.com/html/mov_bbb.mp4"
+                      data-desc="Video 5 설명"
+                    >
+                      <img
+                        src="https://picsum.photos/id/1024/400/240"
+                        alt="Video 5"
+                      />
+                      <p>Video 5</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="vs-nav vs-next">&gt;</button>
+
+                <!-- 모달 -->
+                <div id="vsVideoModal" class="vs-modal">
+                  <div class="vs-modal-content">
+                    <button class="vs-close">&times;</button>
+                    <video id="vsModalVideo" controls></video>
+                    <div class="vs-video-description">
+                      <h2>About Video</h2>
+                      <p id="vsDesc"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 스와이퍼 끝 -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Illustrations -->
+        <article id="menu3" class="item">
+          <div class="section4">
+            <div class="illu-top"><p>illustrations</p></div>
+            <div class="illu-main">
+              <div class="illu-main1">
+                <div class="illu-pic1">
+                  <div class="box1">
+                    <div class="box-pic"><img src="#" alt="pic1" /></div>
+                    <div class="box-name">name</div>
+                  </div>
+                </div>
+                <div class="illu-pic2">
+                  <div class="box1">
+                    <div class="box-pic"><img src="#" alt="pic2" /></div>
+                    <div class="box-name">name</div>
+                  </div>
+                </div>
+                <div class="illu-pic3">
+                  <div class="box1">
+                    <div class="box-pic"><img src="#" alt="pic3" /></div>
+                    <div class="box-name">name</div>
+                  </div>
+                </div>
+              </div>
+              <div class="illu-main2">
+                <div class="illu-pic4">
+                  <div class="box1">
+                    <div class="box-pic"><img src="#" alt="pic4" /></div>
+                    <div class="box-name">name</div>
+                  </div>
+                </div>
+                <div class="illu-pic5">
+                  <div class="box1">
+                    <div class="box-pic"><img src="#" alt="pic5" /></div>
+                    <div class="box-name">name</div>
+                  </div>
+                </div>
+                <div class="illu-pic6">
+                  <div class="box1">
+                    <div class="box-pic"><img src="#" alt="pic6" /></div>
+                    <div class="box-name">name</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Contact -->
+        <article id="menu4" class="item">
+          <div class="section5">
+            <div class="copyright">Copyright</div>
+            <div class="card">
+              <div class="cardbox">
+                <div class="name">Name</div>
+                <div class="birth">Birth</div>
+                <div class="tel">Tel</div>
+                <div class="email">E-mail</div>
+              </div>
+            </div>
+            <div class="sns">
+              <div class="snstag">SNS</div>
+              <div class="icons">
+                <div class="icon1"><img src="#" alt="icon1" /></div>
+                <div class="icon2"><img src="#" alt="icon2" /></div>
+                <div class="icon3"><img src="#" alt="icon3" /></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
